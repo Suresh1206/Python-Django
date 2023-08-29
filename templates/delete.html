@@ -1,0 +1,36 @@
+<center>
+<h2>Student Details</h2>
+<style>
+    table, th, td {
+      border:1px solid black;
+      border-collapse: collapse;
+    }
+    </style>   
+<body style="background-color: blanchedalmond;">
+    {%for message in messages%}
+    <h2 style="color:red;">{{message}}</h2>
+    {%endfor%}
+    <table style="width:50%;text-align: center;">
+        <tr>
+        <th>Student_id</th>
+        <th>Student_Name</th>
+        <th>Student_Branch</th>
+    </tr>
+    <tr>
+        {% for data in datas%}
+        <td>{{data.Student_id}}</td>
+    <td>{{data.Student_Name}}</td>
+    <td>{{data.Student_Branch}}</td><br>
+    </tr>
+    {%endfor%}
+</table><br><br>
+<form action="/delete" method="POST">
+    {% csrf_token %}
+    Enter Id : <input type="text" name = "sid" required>
+    <input type="submit" value ="Delete"><br><br>
+    <a href="/update">Update Student</a>
+</form>
+<a href="/">Register</a>
+</body> 
+
+</center>

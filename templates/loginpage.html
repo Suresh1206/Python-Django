@@ -1,0 +1,17 @@
+<center>
+    <body style="background-color: bisque;">
+        <h1>Login Page</h1>
+        {%for message in messages%}
+        <h2 style="color: green;">{{message}}</h2><br><br>
+        {%endfor%}
+        <form method="POST" action="login">
+            {% csrf_token %}
+            Name : <input type="text" name = "name" required><br><br>
+            Password : <input type="password" name = "password" required><br><br>
+            <input type="submit" value="login"><br><br>
+            
+        </form>
+        <a href="/">Register</a>
+    </body>
+
+</center>

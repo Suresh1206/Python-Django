@@ -1,0 +1,19 @@
+<center>
+    <body style="background-color: bisque;">
+    <h1>Register Page</h1>
+    {%for message in messages%}
+    <h2 style="color: rgb(25, 136, 8);">{{message}}</h2><br><br>
+    {%endfor%}
+    <form method="POST" action="register">
+        {%csrf_token%}
+        Enter Roll_Number : <input type="text" name="sid" required><br><br>
+        Enter Name : <input type="text" name="name" required><br><br>
+        Enter Branch : <input type="text" name="branch" required><br><br>
+        <input type="submit" value="Register"><br><br>
+    </form>
+    <form method="post" action="loginpage">
+        {%csrf_token%}
+        Are you an Admin? <input type="submit" value="Login">
+    </form>
+</body>
+</center>>

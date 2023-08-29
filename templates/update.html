@@ -1,0 +1,40 @@
+<center>
+<style>
+    table, th, td {
+      border:1px solid black;
+      border-collapse: collapse;
+    }
+    </style>
+<h2>Student Details</h2>
+<body style="background-color: blanchedalmond;">
+    {%for message in messages%}
+<h2 style="color: rgb(218, 11, 11);">{{message}}</h2>
+{%endfor%}
+<table style="width:50%;text-align: center;">
+    <tr>
+    <th>Student_id</th>
+    <th>Student_Name</th>
+    <th>Student_Branch</th>
+</tr>
+<tr>
+    {% for data in datas%}
+    <td>{{data.Student_id}}</td>
+<td>{{data.Student_Name}}</td>
+<td>{{data.Student_Branch}}</td><br>
+</tr>
+{%endfor%}
+</table><br><br>
+<h2>Enter Student Id to Update</h2>
+<form action="update" method="post">
+    {% csrf_token %}
+    Enter Id : <input type="text" name = "id1" required><br><br>
+    Enter new id : <input type="text" name = "id2" required><br><br>
+    Enter Name : <input type="text" name="name" required><br><br>
+    Enter Branch : <input type="text" name="branch" required><br><br>
+    <input type="submit" value="Update"><br><br>
+    <a href="/delete">Delete Student</a>
+</form>
+<a href="/">Register</a>
+</body>
+
+</center>
